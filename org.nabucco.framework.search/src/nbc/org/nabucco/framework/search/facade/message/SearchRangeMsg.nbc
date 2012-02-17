@@ -1,0 +1,41 @@
+/*
+* Copyright 2011 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://nabuccosource.org/License.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.framework.search.facade.message;
+
+import org.nabucco.framework.base.facade.datatype.geo.Distance;
+import org.nabucco.framework.base.facade.datatype.geo.GeoLocation;
+import org.nabucco.framework.base.facade.datatype.search.query.FulltextQuery;
+
+
+@Author			Nicolas Moser
+@Version		1.0
+@Date			2011-04-28
+@Company		PRODYNA AG
+@Description	Searches for an index in a specific geo area.
+public Message SearchRangeMsg {
+
+	@Description	The query for the fulltext engine.
+	public Datatype FulltextQuery[1] query;
+
+	@Description	The central geo location for this search.
+	public Datatype GeoLocation[1] location; 
+
+	@Description	The distance of the search range.
+	public Basetype Distance[1] distance;
+	
+}
+

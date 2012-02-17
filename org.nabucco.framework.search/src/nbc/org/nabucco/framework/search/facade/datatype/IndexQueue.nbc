@@ -1,0 +1,63 @@
+/*
+* Copyright 2011 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://nabuccosource.org/License.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.framework.search.facade.datatype;
+
+import org.nabucco.framework.base.facade.datatype.ComponentRef;
+import org.nabucco.framework.base.facade.datatype.DatatypeRef;
+import org.nabucco.framework.base.facade.datatype.Identifier;
+import org.nabucco.framework.base.facade.datatype.NabuccoDatatype;
+import org.nabucco.framework.base.facade.datatype.Owner;
+import org.nabucco.framework.base.facade.datatype.TableRef;
+import org.nabucco.framework.base.facade.datatype.geo.Latitude;
+import org.nabucco.framework.base.facade.datatype.geo.Longitude;
+import org.nabucco.framework.base.facade.datatype.search.index.IndexName;
+import org.nabucco.framework.search.facade.datatype.FulltextData;
+
+@Author			Frank Ratschinski
+@Version		1.0
+@Date			2011-03-01
+@Company		PRODYNA AG
+@Description	A queue for indexing Fulltext search documents.
+public Datatype IndexQueue extends NabuccoDatatype {
+	
+	@Description	The owner of the data to index. 
+	private Basetype Owner[1] owner;
+	
+	@Description 	The name of the index (Datasource JNDI name)
+	private Basetype IndexName[1] indexName;
+	
+	@Description	The component reference.
+	private Basetype ComponentRef[1] componentRef;
+	
+	@Description	The datatype reference.
+	private Basetype DatatypeRef[1] datatypeRef;
+	
+	@Description	The table reference.
+	private Basetype TableRef[1] tableRef;
+
+	@Description	The identifier of the object.
+	private Basetype Identifier[1] identifierRef;
+	
+	@Description	The data (as xml) of the fulltext document.
+	private Basetype FulltextData[1] fulltextData;
+	
+	@Description	Optional latitude geo information for the indexing.
+	private Basetype Latitude [0..1] latitude;  
+	
+	@Description	Optional longitude geo information for the indexing.
+	private Basetype Longitude[0..1] longitude;  
+}
